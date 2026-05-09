@@ -306,6 +306,7 @@ function gridInit(gameState) {
 		
 
 		calc_btn.classList.add('grid-btn')
+		calc_btn.classList.add('button')
 
 		calc_btn.style.width = `${buttonGridWidth / buttonGridCols}px`
 		calc_btn.style.height = `${buttonGridHeight / buttonGridRows}px`

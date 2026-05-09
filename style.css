@@ -54,3 +54,8 @@ html {
 	}*/
 	padding-bottom: 1000px; 
 }
+
+.button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
