@@ -205,13 +205,13 @@ const buttons = [
 	{ color: colors.gray, symbol: "6", operation: (s) => addnum(s, "6") },
 	{ color: colors.gray, symbol: "-", operation: sub},
 
-	{ color: colors.red, symbol: "C", operation: (s) => s.stack = [''] },
+	{ color: colors.red, symbol: "CE", operation: del },
 	{ color: colors.gray, symbol: "1", operation: (s) => addnum(s, "1") },
 	{ color: colors.gray, symbol: "2", operation: (s) => addnum(s, "2") },
 	{ color: colors.gray, symbol: "3", operation: (s) => addnum(s, "3") },
 	{ color: colors.gray, symbol: "+", operation: add },
 
-	{ color: colors.red, symbol: "CE", operation: (s) => del(s) },
+	{ color: colors.red, symbol: "C", operation: (s) => s.stack = [''] },
 	{ color: colors.gray, symbol: "0", operation: (s) => addnum(s, "0") },
 	{ color: colors.gray, symbol: ".", operation: (s) => addnum(s, ".") },
 	{ color: colors.gray, symbol: "ex", operation: null },
@@ -340,7 +340,7 @@ function main() {
 
 	let gameState = {
 		outval: 4,
-		stack: [1000, 200, 300]
+		stack: ['']
 	}
 
 	calcInit(gameState)
