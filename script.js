@@ -277,11 +277,11 @@ function drawCanvas(gameState) {
 }
 
 function gridInit(gameState) {
-	const buttonGrid = document.getElementById('btn-grid')
-	buttonGrid.style.width = `${buttonGridWidth}px`
-	buttonGrid.style.height = `${buttonGridHeight}px`
-	buttonGrid.style.color = 'red'
-	buttonGrid.style.top = `${calcHeight - buttonGridHeight}px`
+	const buttonGrid = document.getElementById('new-grid')
+	//buttonGrid.style.width = `${buttonGridWidth}px`
+	//buttonGrid.style.height = `${buttonGridHeight}px`
+	//buttonGrid.style.color = 'red'
+	//buttonGrid.style.top = `${calcHeight - buttonGridHeight}px`
 
 
 	buttonGrid.addEventListener('click', (e) => {
@@ -293,6 +293,7 @@ function gridInit(gameState) {
 			handlePress(e, gameState)
 		}
 	})
+
 
 	for(let i = 0; i < buttonGridRows * buttonGridCols; i++) {
 		const calc_btn = document.createElement('button')
@@ -308,8 +309,8 @@ function gridInit(gameState) {
 		calc_btn.classList.add('grid-btn')
 		calc_btn.classList.add('button')
 
-		calc_btn.style.width = `${buttonGridWidth / buttonGridCols}px`
-		calc_btn.style.height = `${buttonGridHeight / buttonGridRows}px`
+//		calc_btn.style.width = `${buttonGridWidth / buttonGridCols}px`
+//		calc_btn.style.height = `${buttonGridHeight / buttonGridRows}px`
 
 		calc_btn.style.background = buttons[i].color
 

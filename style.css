@@ -21,16 +21,19 @@
 	color: #e3e3e3;
 }
 
+
 .btn-grid {
+	/*display grid;
 	background: red;
 	position: absolute;
 
-	display: flex;
-	gap: 0px;
-	flex-wrap: wrap;
-
-	margin: 0px;
+	/*margin: 0px;
 	padding: 0px;
+	width: 100px;
+	height: 100px;
+
+	grid-template-columns: auto auto auto;*/
+
 
 	
 }
@@ -59,3 +62,36 @@ html {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
+
+.newgrid {
+	
+}
+
+.new-grid {
+	position: absolute;
+	width: 236px;
+	height: 236px;
+	bottom: 0px;
+  display: grid;
+  /*grid-template-columns: auto auto auto auto auto;*/
+
+  grid-template-columns: repeat(5, minmax(0, 1fr) );
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  background-color: red;
+}
+
+.new-btn {
+	font-size: 30px;
+	color: #e3e3e3;
+	/*background-color: gray;*/
+}
+
+/*
+.new-grid div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+
+}*/
