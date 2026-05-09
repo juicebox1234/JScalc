@@ -215,7 +215,7 @@ const buttons = [
 	{ color: colors.gray, symbol: "0", operation: (s) => addnum(s, "0") },
 	{ color: colors.gray, symbol: ".", operation: (s) => addnum(s, ".") },
 	{ color: colors.gray, symbol: "ex", operation: null },
-	{ color: colors.gray, symbol: "=", operation: (s) => s.stack.push('') },
+	{ color: colors.gray, symbol: "\u{21B5}", operation: (s) => s.stack.push('') },
 
 ];
 
