@@ -186,10 +186,44 @@ function spow(s) {
 	}
 }
 
+function ln(s) {
+	let stack = s.stack
+
+	//cancle if not enough args
+	if(stack.length <= 0) {
+		return
+	}
+
+	let b = stack.pop()
+
+	let out = Math.log(Number(b))
+
+	if(!Number.isNaN(out)) {
+		stack.push(out)
+	}
+}
+
+function trunc(s) {
+	let stack = s.stack
+
+	//cancle if not enough args
+	if(stack.length <= 0) {
+		return
+	}
+
+	let b = stack.pop()
+
+	let out = Math.trunc(Number(b))
+
+	if(!Number.isNaN(out)) {
+		stack.push(out)
+	}
+}
+
 const buttons = [
 	{ color: colors.gray, symbol: "", operation: null },
-	{ color: colors.gray, symbol: "", operation: null },
-	{ color: colors.gray, symbol: "", operation: null },
+	{ color: colors.gray, symbol: "trunc", operation: trunc, font: "16px" },
+	{ color: colors.gray, symbol: "ln", operation: ln },
 	{ color: colors.gray, symbol: "\u{1D465}\u{02E3}", operation: spow },
 	{ color: colors.gray, symbol: "/", operation: div },
 
@@ -205,7 +239,7 @@ const buttons = [
 	{ color: colors.gray, symbol: "6", operation: (s) => addnum(s, "6") },
 	{ color: colors.gray, symbol: "-", operation: sub},
 
-	{ color: colors.red, symbol: "CE", operation: del },
+	{ color: colors.red, symbol: "CE", operation: del, font: "28px"},
 	{ color: colors.gray, symbol: "1", operation: (s) => addnum(s, "1") },
 	{ color: colors.gray, symbol: "2", operation: (s) => addnum(s, "2") },
 	{ color: colors.gray, symbol: "3", operation: (s) => addnum(s, "3") },
@@ -304,10 +338,15 @@ function gridInit(gameState) {
 		}
 
 		calc_btn.innerText = buttons[i].symbol
+
+		if(!(buttons[i].font === undefined)) {
+			calc_btn.style.fontSize = buttons[i].font
+		}
 		
 
 		calc_btn.classList.add('grid-btn')
 		calc_btn.classList.add('button')
+
 
 //		calc_btn.style.width = `${buttonGridWidth / buttonGridCols}px`
 //		calc_btn.style.height = `${buttonGridHeight / buttonGridRows}px`
